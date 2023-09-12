@@ -1,3 +1,7 @@
+# About Project
+
+CryptoBuzz is a powerful and user-friendly cryptocurrency tracker website that empowers you to stay informed about the dynamic world of digital currencies. With real-time data, sleek visualizations, and a simple interface, CryptoBuzz is your go-to tool for keeping a pulse on the cryptocurrency market.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
