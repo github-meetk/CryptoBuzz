@@ -1,29 +1,63 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import { useState } from "react";
 import "../App.css";
-import {CryptoContext} from "../CryptoContext";
+import { CryptoContext } from "../CryptoContext";
 import { useNavigate } from "react-router-dom";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const Navbar = () => {
-    const navigate = useNavigate();
-    const { currency, setCurrency} = useContext(CryptoContext);
+  const [isDarkMode, setDarkMode] = useState(false);
+  const [theme, setTheme] = useState("light-theme");
 
-    function changeHandler(e){ 
-        setCurrency(e.target.value);
+  const toggleDarkMode = (checked) => {
+    setDarkMode(checked);
+    if (theme === "dark-theme") {
+      setTheme("light-theme");
+    } else {
+      setTheme("dark-theme");
     }
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+  const navigate = useNavigate();
+  const { currency, setCurrency } = useContext(CryptoContext);
+
+  function changeHandler(e) {
+    setCurrency(e.target.value);
+  }
 
   return (
     <div className="Navbar">
-      <h2 onClick={ () => {navigate('/')}} > Crypto Buzz</h2>
-      <div>
-        <label className="Label"> 
-            Currency :  
-            <select className="Select" name="Currency" value={currency} onChange={changeHandler}>
+      <h2
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        {" "}
+        Crypto Buzz
+      </h2>
+      <div className="navbarRightSide">
+        <label className="Label">
+          Currency :
+          <select
+            className="Select"
+            name="Currency"
+            value={currency}
+            onChange={changeHandler}
+          >
             <option value="INR">INR</option>
             <option value="USD">USD</option>
-            </select>
+          </select>
         </label>
+        <DarkModeSwitch
+          checked={isDarkMode}
+          onChange={toggleDarkMode}
+          size={30}
+        />
       </div>
-      
     </div>
   );
 };

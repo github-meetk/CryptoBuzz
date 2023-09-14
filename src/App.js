@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import Coinpage from './pages/Coinpage';
 
 function App() {
+  
   return (
     <div className='wrapper'>
       <Navbar />

@@ -1,13 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
+.light-theme {
+  --text-color : #102c57;
+  --bg-color : #f4f2f0;
+}
+
+.dark-theme {
+  --text-color : #f8f0e5;
+  --bg-color : #050e1b;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-  color: #102c57;
-  background-color: #f8f0e5;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: 0.5s ease-in-out;
 }
 
 .wrapper {
@@ -21,6 +32,14 @@
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
+}
+
+
+.navbarRightSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .Label {
@@ -39,7 +58,7 @@ h2 {
   height: 30px;
   margin-left: 10px;
   border-radius: 5px;
-  border-color: #102c57;
+  border-color: var(--text-color);
   border-width: 2px;
 }
 
@@ -58,7 +77,6 @@ h2 {
 }
 
 .slider {
-  color: #102c57;
   text-decoration: none;
   margin-top: 50px;
   align-items: center;
@@ -73,7 +91,6 @@ img {
 }
 
 .trendPrice {
-  color: #102c57;
   font-size: large;
 }
 
@@ -98,8 +115,8 @@ img {
   height: 50px;
   border-radius: 10px;
   border: 2px solid;
-  border-color: #102c57;
-  color: #102c57;
+  border-color: var(--text-color);
+  /* color: #102c57; */
   padding: 10px 40px;
   font-size: medium;
 }
@@ -112,7 +129,7 @@ img {
 }
 
 table {
-  color: #102c57;
+  /* color: #102c57; */
   width: 100%;
   margin-block: 30px;
 }
@@ -124,10 +141,10 @@ td {
 }
 
 th {
-  background-color: #102c57;
+  background-color: var(--text-color);
   font-size: larger;
   padding: 20px 20px;
-  color: #f8f0e5;
+  color: var(--bg-color);
 }
 
 .coinsRow {
@@ -161,13 +178,16 @@ th {
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  border-color: #102c57;
-  border: 2px solid #102c57;
+  border-color: var(--text-color);
+  border: 2px solid;
 }
 
 .pagination button.active {
-  background-color: #102c57;
-  color: #f8f0e5;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
  /* Coin Page  */
@@ -220,20 +240,19 @@ th {
 }
 
 .chartControlButton {
-  background-color: #f8f0e5;
-  color:#102c57;
-  border-color: #102c57;
+  background-color: var(--bg-color);
+  /* color:#102c57; */
+  border-color: var(--text-color);
   font-size: medium;
   width: 100px;
-  border: 2px solid;
+  border: 3px solid;
   border-radius: 20px;
   height: 40px;
-  box-shadow:2px 2px 5px #102c57;
 }
 
 .chartControlButton:hover {
-  background-color: #102c57;
-  color:#f8f0e5;
+  background-color: var(--text-color);
+  color:var(--bg-color);
   border-color: #102c57;
 }
 
