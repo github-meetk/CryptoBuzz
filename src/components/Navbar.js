@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <div className="Navbar">
-      <h2
+      <h2 className="navbarTitle"
         onClick={() => {
           navigate("/");
         }}

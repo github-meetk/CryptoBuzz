@@ -55,7 +55,7 @@ const Banner = () => {
         <div className="bannerTitle">
           <h1>Crypto Buzz</h1>
         </div>
-        <p>Get All The Info Regarding Your Favorite Crypto Currency</p>
+        <p className="bannerDesc" >Get All The Info Regarding Your Favorite Crypto Currency</p>
       </div>
       {loading ? (
         <div className="loader">

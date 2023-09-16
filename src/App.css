@@ -68,12 +68,18 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   user-select: none;
 }
 
 .bannerTitle {
-  padding: 20px 0;
+  margin: auto;
+  padding: 20px auto;
   font-size: xx-large;
+}
+
+.bannerDesc {
+  margin: 18px;
 }
 
 .slider {
@@ -132,6 +138,11 @@ table {
   /* color: #102c57; */
   width: 100%;
   margin-block: 30px;
+}
+
+.Table {
+  width: 100%;
+  overflow-x: scroll;
 }
 
 table,
@@ -263,6 +274,10 @@ th {
  /* For Responsiveness  (Tab - View)  */
 
 @media only screen and (max-width: 1090px) {
+  .bannerTitle {
+    font-size: x-large;
+  }
+
   .chart {
     width: 110%;
     margin-block: 30px;
@@ -284,8 +299,25 @@ th {
 /* For Responsiveness ( Mobile - View )  */
 
 @media only screen and (max-width: 580px) {
+  .navbarTitle {
+    display: none;
+  }
+
+  .navbarRightSide {
+    width: 100%;
+    justify-content: space-around;
+  }
+
   .wrapper {
-    width: 95%;
+    width: 100%;
     overflow: scroll;
+  }
+
+  .Table {
+    margin: auto;
+  }
+
+  .bannerTitle {
+    font-size: medium;
   }
 }

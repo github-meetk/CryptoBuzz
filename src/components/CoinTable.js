@@ -74,6 +74,7 @@ const CoinTable = () => {
           visible={true}
         />
       ) : (
+        <div className="Table" >
         <table>
           <thead>
             <tr>
@@ -142,6 +143,7 @@ const CoinTable = () => {
               })}
           </tbody>
         </table>
+        </div>
       )}
 
       <div className="pagination">
