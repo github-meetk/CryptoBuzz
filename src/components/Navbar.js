@@ -8,7 +8,7 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 const Navbar = () => {
   const [isDarkMode, setDarkMode] = useState(false);
   const [theme, setTheme] = useState("light-theme");
-
+  
   const toggleDarkMode = (checked) => {
     setDarkMode(checked);
     if (theme === "dark-theme") {
@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [theme]);
 
   const navigate = useNavigate();
-  const { currency, setCurrency } = useContext(CryptoContext);
+  const { currency, setCurrency, currencies } = useContext(CryptoContext);
 
   function changeHandler(e) {
     setCurrency(e.target.value);
@@ -36,20 +36,25 @@ const Navbar = () => {
           navigate("/");
         }}
       >
-        {" "}
         Crypto Buzz
       </h2>
       <div className="navbarRightSide">
         <label className="Label">
           Currency :
           <select
+            onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'
             className="Select"
             name="Currency"
             value={currency}
             onChange={changeHandler}
           >
-            <option value="INR">INR</option>
-            <option value="USD">USD</option>
+
+            {currencies?.map((data, index) => (
+              <option className="Option" key={index} value={data.toUpperCase()}>{data.toUpperCase()}</option>
+            ))}
+
+            {/* <option value="INR">INR</option>
+            <option value="USD">USD</option> */}
           </select>
         </label>
         <DarkModeSwitch
