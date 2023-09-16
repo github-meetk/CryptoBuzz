@@ -246,6 +246,8 @@ th {
 }
 
 .chartButtons {
+  overflow: scroll;
+  gap: 10px;
   display: flex;
   margin-top: 20px;
   justify-content: space-around;
@@ -255,7 +257,6 @@ th {
 .chartControlButton {
   cursor: pointer;
   background-color: var(--bg-color);
-  /* color:#102c57; */
   border-color: var(--text-color);
   font-weight: bold;
   font-size: medium;
@@ -310,7 +311,7 @@ th {
 
   .wrapper {
     width: 100%;
-    overflow: scroll;
+    overflow: hidden;
   }
 
   .Table {
@@ -319,5 +320,9 @@ th {
 
   .bannerTitle {
     font-size: medium;
+  }
+
+  .chartControlButton {
+    height: max-content;
   }
 }
