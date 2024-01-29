@@ -104,7 +104,6 @@ img {
 
 .tableContainer {
   width: 100%;
-  overflow: scroll;
   margin-block: 20px;
   display: flex;
   flex-direction: column;
@@ -143,6 +142,19 @@ table {
 .Table {
   width: 100%;
   overflow-x: scroll;
+  overflow-y: hidden;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 90, 90);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 table,
@@ -302,6 +314,11 @@ th {
 @media only screen and (max-width: 580px) {
   .navbarTitle {
     display: none;
+  }
+
+  .tableContainer {
+    padding: 0 50px;
+    font-size: smaller;
   }
 
   .navbarRightSide {
